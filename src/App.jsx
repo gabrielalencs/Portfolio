@@ -1,7 +1,7 @@
 import "./styles/base/reset.scss"
 
 
-import image3 from "@/logo.png"
+import image3 from "@/assets/logo.svg"
 
 
 const App = () => {
@@ -10,7 +10,6 @@ const App = () => {
     return (
         <>
            <h1>Gabriel</h1>
-
 
             <div style={{padding: "5rem"}}><img src={image3} alt="" width={200}  /></div>
         </>
