@@ -1,17 +1,21 @@
-import "./styles/base/reset.scss"
+// Images
 
+import "./styles/base/reset.scss";
 
-import image3 from "@/assets/logo.svg"
+// Styles
 
+import "./styles/layout/header.scss"
+
+// Components
+
+import Header from "./components/Header";
 
 const App = () => {
 
 
     return (
         <>
-           <h1>Gabriel</h1>
-
-            <div style={{padding: "5rem"}}><img src={image3} alt="" width={200}  /></div>
+           <Header />
         </>
     )
 }

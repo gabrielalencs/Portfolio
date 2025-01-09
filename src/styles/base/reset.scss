@@ -1,3 +1,5 @@
+@use "colors.scss" as color;
+
 * {
     margin: 0;
     padding: 0;
@@ -9,5 +11,11 @@ html {
 }
 
 body {
-    background-color: #13131F;
+    background-color: color.$body-color;
+    font-family: "Geist", serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
