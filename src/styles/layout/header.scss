@@ -2,13 +2,18 @@
 @use "../base/breakpoints.scss" as media;
 
 .header {
-    padding: 3rem 2rem;
+    padding: 3rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    overflow-x: hidden;
 
     @include media.tablets {
-        padding: 3rem 4rem;
+        padding: 1rem 3rem;
+    }
+
+    @include media.laptops {
+        padding: 1rem 5rem;
     }
 
     &__logo {
@@ -26,42 +31,30 @@
         flex-direction: column;
         align-items: center;
         gap: 5rem;
+
+        @include media.tablets {
+            flex-direction: row;
+            gap: 4rem;
+        }
+
+        @include media.laptops {
+            gap: 7rem;
+        }
     }
 
     &__nav-item {
         color: color.$white;
-        font-size: 3em;
+        font-size: 3rem;
         opacity: 0;
         transform: translateX(100px);
         transition: opacity .4s ease, transform .4s ease;
         position: relative;
 
-        
-        &:nth-child(5) {
-            transition-delay: 0.1s;
-        }
-
-        &:nth-child(4) {
-            transition-delay: 0.2s;
-        }
-
-        &:nth-child(3) {
-            transition-delay: 0.3s;
-        }
-
-        &:nth-child(2) {
-            transition-delay: 0.4s;
-        }
-
-        &:nth-child(1) {
-            transition-delay: 0.5s;
-        }
-    
         &:hover::before {
             transform-origin: 0% 50%;
             transform: scale3d(1, 1, 1);
         }
-    
+
         &::before {
             content: '';
             position: absolute;
@@ -72,6 +65,64 @@
             transform-origin: 100% 50%;
             transform: scale3d(0, 1, 1);
             transition: transform 0.3s;
+        }
+
+        &:nth-child(5) {
+            transition-delay: 0.1s;
+
+            @include media.tablets {
+                transition: none;
+            }
+        }
+
+        &:nth-child(4) {
+            transition-delay: 0.2s;
+
+            @include media.tablets {
+                transition: none;
+            }
+        }
+
+        &:nth-child(3) {
+            transition-delay: 0.3s;
+
+            @include media.tablets {
+                transition: none;
+            }
+        }
+
+        &:nth-child(2) {
+            transition-delay: 0.4s;
+
+            @include media.tablets {
+                transition: none;
+            }
+        }
+
+        &:nth-child(1) {
+            transition-delay: 0.5s;
+
+            @include media.tablets {
+                opacity: 1;
+                transform: translateX(0);
+                font-size: 1.8rem;
+                transition: none;
+            }
+        }
+
+        @include media.tablets {
+            opacity: 1;
+            transform: translateX(0);
+            font-size: 1.8rem;
+            transition: none;
+        }
+
+        @include media.laptops {
+            font-size: 2rem;
+        }
+
+        @include media.largeDesktops {
+            font-size: 2.2rem;
         }
     }
 
@@ -123,6 +174,16 @@
             clip-path: circle(150% at 50% 50%);
             -webkit-clip-path: circle(150% at 50% 50%);
         }
+
+        @include media.tablets {
+            position: static;
+            width: max-content;
+            height: max-content;
+            clip-path: none;
+            transition: none;
+            background: transparent;
+            backdrop-filter: none;
+        }
     }
 
     // Mobile Menu Button
@@ -143,6 +204,10 @@
         gap: 10px;
         transition-duration: .5s;
         z-index: 99;
+
+        @include media.tablets {
+            display: none;
+        }
     }
 
     &__checkbox-bars {
