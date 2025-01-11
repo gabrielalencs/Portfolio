@@ -6,14 +6,12 @@ import { useState } from "react";
 
 const Header = () => {
 
-    const [isOpen, setIsOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
-        setIsOpen(!isOpen);
+        setIsMenuOpen(!isMenuOpen);
     };
 
-    console.log(isOpen);
-    
 
     return (
         <header className="header">
@@ -23,19 +21,21 @@ const Header = () => {
 
             <div>
                 <div>
-                    <input 
+                    <input
                         type="checkbox"
-                        className="header__checkbox"  
-                        onClick={toggleMenu} 
+                        id="menu-checkbox"
+                        className="header__checkbox"
+                        checked={isMenuOpen}
+                        onChange={toggleMenu}
                     />
-                    <label htmlFor="checkbox" className="header__toggle-checkbox">
+                    <label htmlFor="menu-checkbox" className="header__toggle-checkbox">
                         <div className="header__checkbox-bars" id="bar1"></div>
                         <div className="header__checkbox-bars" id="bar2"></div>
                         <div className="header__checkbox-bars" id="bar3"></div>
                     </label>
                 </div>
 
-                <nav className={`menu-overlay ${isOpen ? "open" : ""}`}>
+                <nav className={`header__menu-overlay ${isMenuOpen ? "open" : ""}`}>
                     <ul className="header__nav-list">
                         <li className="header__nav-item">
                             <a href="#">Início</a>
@@ -58,8 +58,8 @@ const Header = () => {
                         </li>
                     </ul>
                 </nav>
-            </div>
-        </header>
+            </div >
+        </header >
     )
 }
 
