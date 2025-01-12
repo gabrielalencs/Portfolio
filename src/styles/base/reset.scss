@@ -8,14 +8,21 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
     background-color: color.$body-color;
     font-family: "Geist", serif;
+    height: 1000vh;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+}
+
+.container {
+    max-width: 128.0rem;
+    margin: 0 auto;
 }

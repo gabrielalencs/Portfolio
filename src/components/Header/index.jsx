@@ -2,19 +2,50 @@
 
 import Logo from "@/assets/logo.svg";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [hasScrolled, setHasScrolled] = useState(false);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth > 768) {
+                setIsMenuOpen(false);
+            }
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setHasScrolled(true);
+            } else {
+                setHasScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+    
 
     return (
-        <header className="header">
+        <header className={`header container ${hasScrolled ? "scrolled" : ""}`}>
             <div className="header__logo">
                 <img src={Logo} alt="Logo Portfólio" />
             </div>

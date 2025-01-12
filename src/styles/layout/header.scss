@@ -7,17 +7,43 @@
     align-items: center;
     justify-content: space-between;
     overflow-x: hidden;
+    position: fixed;
+    top: 0;
+    left: 0; 
+    right: 0; 
+    width: 100%;
+    transition: all .3s;
 
     @include media.tablets {
         padding: 1rem 3rem;
     }
 
     @include media.laptops {
-        padding: 1rem 5rem;
+        padding: 1rem 2rem 1rem 5rem;
+    }
+
+    @include media.tablets {
+        &.scrolled &__logo {
+            opacity: 0;
+        }
+    
+        &.scrolled &__menu-overlay {
+            background: rgba(217, 217, 217, .05);
+            backdrop-filter: blur(19.5px);
+        }
+    
+        &.scrolled &__nav-list {
+            gap: 4rem;
+        }
     }
 
     &__logo {
         width: 13rem;
+        transition: all .3s;
+
+        @include media.laptops {
+            width: 15rem;
+        }
 
         img {
             width: 100%;
@@ -31,6 +57,7 @@
         flex-direction: column;
         align-items: center;
         gap: 5rem;
+        transition: all .3s;
 
         @include media.tablets {
             flex-direction: row;
@@ -103,9 +130,6 @@
             transition-delay: 0.5s;
 
             @include media.tablets {
-                opacity: 1;
-                transform: translateX(0);
-                font-size: 1.8rem;
                 transition: none;
             }
         }
@@ -119,10 +143,6 @@
 
         @include media.laptops {
             font-size: 2rem;
-        }
-
-        @include media.largeDesktops {
-            font-size: 2.2rem;
         }
     }
 
@@ -183,8 +203,13 @@
             transition: none;
             background: transparent;
             backdrop-filter: none;
+            transition: all .3s;
+            padding: 3rem;
+            border-radius: 3rem;
         }
     }
+
+    
 
     // Mobile Menu Button
 
