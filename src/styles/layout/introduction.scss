@@ -1,0 +1,105 @@
+@use "../base/colors.scss" as color;
+
+.introduction {
+    margin-top: 17rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .introduction__content {
+        flex: 1;
+        padding: 5rem;
+    }
+
+    .introduction__name-text {
+        font-size: 4rem;
+        color: color.$white;
+        font-weight: 600;
+    }
+
+    .introduction__role-text {
+        font-size: 4rem;
+        color: color.$purple-secondary;
+        font-weight: 600;
+    }
+
+    .introduction__description {
+        margin-top: 2rem;
+        font-size: 1.8rem;
+        line-height: 2.7rem;
+        color: color.$gray;
+    }
+
+    .introduction__container-avatar {
+        flex: 1;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .avatar-container {
+        position: relative;
+        z-index: 1;
+        background: url("@/assets/Gradient.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 5rem 0;
+
+        .avatar {
+            width: 25rem;
+            border-radius: 50%;
+            position: relative;
+        }
+    }
+
+    .introduction__icons-container {
+        position: absolute;
+        width: 25rem;
+        height: 25rem;
+        margin: 0 auto;
+        animation: rotate 10s linear infinite;
+
+        .introduction__icon {
+            position: absolute;
+            background: rgba(217, 217, 217, 0.05);
+            padding: 1.5rem;
+            width: max-content;
+            border-radius: 1rem;
+            border: 1px solid rgba(97, 90, 99, 0.363);
+            font-size: 4rem;
+            color: color.$purple-primary;
+            // color: color.$white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .icon-1 {
+            top: -95%;
+            left: 45%;
+            animation: moveIcon 2s ease 2.9s infinite alternate;
+        }
+
+        .icon-2 {
+            top: -147%;
+            right: -112%;
+            animation: moveIcon 2s ease 1.9s infinite alternate;
+        }
+
+        .icon-3 {
+            top: -49%;
+            left: 186%;
+            animation: moveIcon 2s ease .6s infinite alternate;
+        }
+    }
+}
+
+@keyframes moveIcon {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(1rem, -3rem, 0);
+    }
+}

@@ -1,21 +1,24 @@
-// Images
-
-import "./styles/base/reset.scss";
-
 // Styles
 
-import "./styles/layout/header.scss"
+import "./styles/base/reset.scss";
 
 // Components
 
 import Header from "./components/Header";
+import Introduction from "./components/Introduction";
+
+
+
 
 const App = () => {
 
 
     return (
         <>
-           <Header />
+            <Header />
+            <main>
+                <Introduction />
+            </main>
         </>
     )
 }

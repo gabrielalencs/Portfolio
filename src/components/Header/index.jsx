@@ -1,8 +1,14 @@
+// React
+
+import { useEffect, useState } from "react";
+
+// Styles
+
+import "@/styles/layout/header.scss";
+
 // Images
 
 import Logo from "@/assets/logo.svg";
-
-import { useEffect, useState } from "react";
 
 const Header = () => {
 
@@ -42,7 +48,7 @@ const Header = () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
-    
+
 
     return (
         <header className={`header container ${hasScrolled ? "scrolled" : ""}`}>
@@ -89,8 +95,8 @@ const Header = () => {
                         </li>
                     </ul>
                 </nav>
-            </div >
-        </header >
+            </div>
+        </header>
     )
 }
 
