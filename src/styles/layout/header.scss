@@ -74,6 +74,10 @@
         }
 
         @include media.laptops {
+            gap: 6rem;
+        }
+
+        @include media.largeDesktops {
             gap: 7rem;
         }
     }
@@ -150,7 +154,7 @@
             transition: none;
         }
 
-        @include media.laptops {
+        @include media.largeDesktops {
             font-size: 2rem;
         }
     }

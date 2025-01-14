@@ -2,19 +2,29 @@
 @use "../base/breakpoints.scss" as media;
 
 .introduction {
-    margin-top: 17rem;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
+    margin-top: 20rem;
+
+    @include media.laptops {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     .introduction__content {
-        padding: 3rem;
+        padding: 0 3rem;
         max-width: 59rem;
-        // flex: 1;
 
         @include media.tablets {
             margin: 0 auto;
             text-align: center;
+        }
+
+        @include media.laptops {
+            flex: 1;
+            margin: 0;
+            max-width: 100%;
+            text-align: left;
+            padding: 0 5rem;
         }
     }
 
@@ -27,11 +37,23 @@
         @include media.mobiles {
             font-size: 2.6rem;
         }
+
+        @include media.tablets {
+            font-size: 3.2rem;
+        }
+
+        @include media.desktops {
+            font-size: 4rem;
+        }
     }
 
     .introduction__role-text {
         color: color.$purple-secondary;
         margin-top: .5rem;
+
+        @include media.desktops {
+            margin-top: 0;
+        }
     }
 
     .introduction__description {
@@ -44,13 +66,24 @@
             font-size: 1.5rem;
             line-height: 2.7rem;
         }
+
+        @include media.tablets {
+            margin-top: 2rem;
+            font-size: 1.8rem;
+            line-height: 3rem;
+        }
     }
 
     .introduction__container-avatar {
-        flex: 1;
         text-align: center;
         position: relative;
         z-index: 1;
+        margin-top: 4rem;
+
+        @include media.laptops {
+            flex: 1;
+            margin-top: 0;
+        }
     }
 
     .avatar-container {
@@ -60,7 +93,7 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: 100% 100%;
-        padding: 3rem 0; 
+        padding: 3rem 0;
 
         .avatar {
             width: 20rem;
@@ -70,49 +103,58 @@
             @include media.mobiles {
                 width: 25rem;
             }
+
+            @include media.desktops {
+                width: 30rem;
+            }
         }
     }
 
-    // .introduction__icons-container {
-    //     position: absolute;
-    //     width: 25rem;
-    //     height: 25rem;
-    //     margin: 0 auto;
-    //     animation: rotate 10s linear infinite;
+    .introduction__icons-container {
+        position: absolute;
+        width: 25rem;
+        height: 25rem;
+        margin: 0 auto;
+        animation: rotate 10s linear infinite;
+        display: none;
 
-    //     .introduction__icon {
-    //         position: absolute;
-    //         background: rgba(217, 217, 217, 0.05);
-    //         padding: 1.5rem;
-    //         width: max-content;
-    //         border-radius: 1rem;
-    //         border: 1px solid rgba(97, 90, 99, 0.363);
-    //         font-size: 4rem;
-    //         color: color.$purple-primary;
-    //         // color: color.$white;
-    //         display: flex;
-    //         justify-content: center;
-    //         align-items: center;
-    //     }
+        @include media.laptops {
+            display: block;
+        }
 
-    //     .icon-1 {
-    //         top: -95%;
-    //         left: 45%;
-    //         animation: moveIcon 2s ease 2.9s infinite alternate;
-    //     }
+        .introduction__icon {
+            position: absolute;
+            background: rgba(217, 217, 217, 0.05);
+            padding: 1.5rem;
+            width: max-content;
+            border-radius: 1rem;
+            border: 1px solid rgba(97, 90, 99, 0.363);
+            font-size: 4rem;
+            color: color.$purple-primary;
+            // color: color.$white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    //     .icon-2 {
-    //         top: -147%;
-    //         right: -112%;
-    //         animation: moveIcon 2s ease 1.9s infinite alternate;
-    //     }
+        .icon-1 {
+            // top: -95%;
+            // left: 45%;
+            // animation: moveIcon 2s ease 2.9s infinite alternate;
+        }
 
-    //     .icon-3 {
-    //         top: -49%;
-    //         left: 186%;
-    //         animation: moveIcon 2s ease .6s infinite alternate;
-    //     }
-    // }
+        .icon-2 {
+            // top: -147%;
+            // right: -112%;
+            // animation: moveIcon 2s ease 1.9s infinite alternate;
+        }
+
+        .icon-3 {
+            // top: -49%;
+            // left: 186%;
+            // animation: moveIcon 2s ease .6s infinite alternate;
+        }
+    }
 }
 
 @keyframes moveIcon {
