@@ -17,12 +17,19 @@ const Header = () => {
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
+
+        if (isMenuOpen) {
+            document.body.style.overflow = "auto";
+        } else {
+            document.body.style.overflow = "hidden";
+        }
     };
 
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth > 768) {
                 setIsMenuOpen(false);
+                document.body.style.overflow = "auto";
             }
         };
 
