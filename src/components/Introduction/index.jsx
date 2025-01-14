@@ -8,12 +8,6 @@ import { HiWindow } from "react-icons/hi2";
 import { GrPersonalComputer } from "react-icons/gr";
 import { GrTechnology } from "react-icons/gr";
 
-
-import { RiReactjsLine } from "react-icons/ri";
-import { SiNextdotjs } from "react-icons/si";
-import { BiLogoTypescript } from "react-icons/bi";
-
-
 const Introduction = () => {
     return (
         <section className="introduction">

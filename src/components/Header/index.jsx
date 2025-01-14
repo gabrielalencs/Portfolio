@@ -1,6 +1,6 @@
 // React
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // Styles
 
@@ -11,9 +11,9 @@ import "@/styles/layout/header.scss";
 import Logo from "@/assets/logo.svg";
 
 const Header = () => {
-
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [hasScrolled, setHasScrolled] = useState(false);
+    const headerRef = useRef(null);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -42,7 +42,7 @@ const Header = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 50) {
+            if (window.scrollY > 300) {
                 setHasScrolled(true);
             } else {
                 setHasScrolled(false);
@@ -56,9 +56,30 @@ const Header = () => {
         };
     }, []);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                headerRef.current.querySelector(".header__menu-overlay").classList.add("opacity");
+                headerRef.current.querySelector(".header__logo").classList.add("opacity");
+            } else {
+                headerRef.current.querySelector(".header__menu-overlay").classList.remove("opacity");
+                headerRef.current.querySelector(".header__logo").classList.remove("opacity");
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
 
     return (
-        <header className={`header container ${hasScrolled ? "scrolled" : ""}`}>
+        <header
+            className={`header container ${hasScrolled ? "scrolled" : ""}`}
+            ref={headerRef}
+        >
             <div className="header__logo">
                 <img src={Logo} alt="Logo Portfólio" />
             </div>

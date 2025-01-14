@@ -143,21 +143,24 @@
         }
 
         .icon-1 {
-            top: 0;
-            left: 0;
-            // animation: moveIcon 2s ease 2.9s infinite alternate;
+            top: 75%;
+            right: 80%;
+            animation: moveIcon 2s ease 1.9s infinite alternate;
         }
 
         .icon-2 {
-            // top: -147%;
-            // right: -112%;
-            // animation: moveIcon 2s ease 1.9s infinite alternate;
+            top: 5%;
+            right: 10%;
+            animation: moveIcon 2s ease 2.9s  infinite alternate;
         }
 
         .icon-3 {
-            // top: -49%;
-            // left: 186%;
-            // animation: moveIcon 2s ease .6s infinite alternate;
+            top: 10%;
+            animation: moveIcon 2s ease .6s infinite alternate;
+
+            @include media.desktops {
+                right: 75%;
+            }
         }
     }
 }
