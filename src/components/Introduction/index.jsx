@@ -2,11 +2,13 @@
 
 import "@/styles/layout/introduction.scss";
 
-import Eu from "@/assets/eu2.png";
+// Images
 
+import Avatar from "@/assets/avatar-home.png";
 import { HiWindow } from "react-icons/hi2";
 import { GrPersonalComputer } from "react-icons/gr";
 import { GrTechnology } from "react-icons/gr";
+
 
 const Introduction = () => {
     return (
@@ -20,7 +22,7 @@ const Introduction = () => {
 
             <div className="introduction__container-avatar">
                 <div className="avatar-container">
-                    <img src={Eu} alt="Meu avatar" className="avatar" />
+                    <img src={Avatar} alt="Meu avatar" className="avatar" />
                 </div>
 
                 <div className="introduction__icons-container">

@@ -8,6 +8,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 100vh;
+        margin-top: 10rem;
+    }
+
+    @include media.largeDesktops {
+        margin-top: 0;
     }
 
     .introduction__content {
@@ -46,6 +52,10 @@
         @include media.desktops {
             font-size: 4rem;
         }
+
+        @include media.largeDesktops {
+            font-size: 4.2rem;
+        }
     }
 
     .introduction__role-text {
@@ -77,6 +87,11 @@
         @include media.laptops {
             font-size: 1.7rem;
             line-height: 3rem;
+        }
+
+        @include media.largeDesktops {
+            font-size: 1.8rem;
+            line-height: 3.1rem;
         }
     }
 
@@ -111,7 +126,7 @@
             }
 
             @include media.desktops {
-                width: 30rem;
+                width: 33rem;
             }
         }
     }
@@ -138,7 +153,6 @@
             border: 1px solid rgba(97, 90, 99, 0.363);
             font-size: 4rem;
             color: color.$purple-primary;
-            // color: color.$white;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -146,23 +160,20 @@
 
         .icon-1 {
             top: 75%;
-            right: 80%;
+            right: 78%;
             animation: moveIcon 2s ease 1.9s infinite alternate;
         }
 
         .icon-2 {
             top: 5%;
-            right: 10%;
+            right: 15%;
             animation: moveIcon 2s ease 2.9s  infinite alternate;
         }
 
         .icon-3 {
             top: 10%;
+            right: 75%;
             animation: moveIcon 2s ease .6s infinite alternate;
-
-            @include media.desktops {
-                right: 75%;
-            }
         }
     }
 }

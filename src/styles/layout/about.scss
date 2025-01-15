@@ -1,0 +1,62 @@
+@use "../base/colors.scss" as color;
+@use "../base/breakpoints.scss" as media;
+
+.about {
+    padding: 0 5rem;
+    margin-top: 20rem;
+
+    @include media.laptops {
+        margin-top: 10rem;
+    }
+
+    @include media.largeDesktops {
+        margin-top: 0;
+    }
+
+    &__title {
+        font-size: 2.2rem;
+        color: color.$white;
+        font-weight: 600;
+        position: relative;
+        width: max-content;
+        margin: 0 auto;
+
+        &::after {
+            content: "Quem Sou Eu";
+            display: block;
+            font-size: 2rem;
+            position: relative;
+            z-index: 5;
+            text-align: center;
+            background-color: color.$body-color;
+            width: max-content;
+            margin: .3rem auto 0;
+            padding: 0 .5rem;
+            color: #dfe2e6;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            width: 180px;
+            height: 3px;
+            background: color.$purple-secondary;
+            border-radius: 5rem;
+            transform: translateX(-50%);
+        }
+
+        @include media.mobiles {
+            font-size: 2.6rem;
+        }
+
+        @include media.tablets {
+            font-size: 3.2rem;
+        }
+
+        @include media.laptops {
+            font-size: 4.2rem;
+        }
+    }
+}
