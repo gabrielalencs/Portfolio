@@ -15,14 +15,14 @@ const Introduction = () => {
         <section className="introduction">
             <div className="introduction__content">
                 <h1 className="introduction__name-text">Eu sou o Gabriel de Alencar</h1>
-                <h2 className="introduction__role-text">Desenvolvedor Front-End</h2>
+                <h2 className="introduction__role-text">Desenvolvedor Frontend</h2>
 
                 <p className="introduction__description">Como desenvolvedor front-end, meu foco é na criação de interfaces responsivas e dinâmicas, garantindo que cada projeto não só funcione, mas que encante o usuário em cada interação.</p>
             </div>
 
             <div className="introduction__container-avatar">
                 <div className="avatar-container">
-                    <img src={Avatar} alt="Meu avatar" className="avatar" />
+                    <img src={Avatar} alt="Avatar de Gabriel de Alencar" className="avatar" />
                 </div>
 
                 <div className="introduction__icons-container">
