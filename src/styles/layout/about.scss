@@ -2,15 +2,17 @@
 @use "../base/breakpoints.scss" as media;
 
 .about {
-    margin: 20rem 5rem 0;
+    margin: 20rem 3rem 0;
     background-color: #181826;
     border: 2px solid #1f1f30;
     border-radius: 1.5rem;
-    display: flex;
-    gap: 2rem;
+    padding: 3rem;
 
     @include media.laptops {
         margin-top: 10rem;
+        margin: 20rem 5rem 0;
+        display: flex;
+        gap: 2rem;
     }
 
     @include media.largeDesktops {
@@ -18,65 +20,146 @@
     }
 
     &__image {
-        width: 50%;
-        padding: 4rem 0 0 4rem;
+        width: 100%;
+        display: none;
+
+        @include media.laptops {
+            display: block;
+            flex: 1;
+            display: flex;
+            align-items: end;
+        }
 
         img {
             width: 100%;
             position: relative;
-            top: .4rem;
+            top: 3rem;
         }
     }
 
     &__container-texts {
         margin-top: 3rem;
-        width: 80%;
+
+        @include media.laptops {
+            flex: 2;
+        }
     }
 
     &__buttons-infos {
-        margin-top: 7rem;
         display: flex;
-        gap: 4rem;
+        gap: 2rem;
+
+        @include media.mobiles {
+            gap: 3rem;
+        }
+
+        @include media.laptops {
+            margin-top: 7rem;
+        }
     }
 
     &__texts {
-        margin-top: 8rem;
+        margin-top: 5rem;
     }
 
     &__texts h3 {
-        font-size: 3.5rem;
+        font-size: 2.2rem;
         color: #fff;
+        transition: all .2s;
+
+        @include media.mobiles {
+            font-size: 2.6rem;
+        }
+
+        @include media.tablets {
+            font-size: 3.2rem;
+        }
+
+        @include media.desktops {
+            font-size: 4rem;
+        }
+
+        @include media.largeDesktops {
+            font-size: 4.2rem;
+        }
 
         span {
-            background: linear-gradient(264.26deg, #5a29b0, #9569e3 60.03%);
+            background: linear-gradient(264.26deg, #753bd7, #9569e3 60.03%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+
+        @include media.tablets {
+            br {
+                display: none;
+            }
         }
     }
 
     &__texts p {
         margin-top: 1.5rem;
-        font-size: 1.8rem;
+        font-size: 1.3rem;
+        line-height: 2.4rem;
         color: #e9e9e9;
-        line-height: 3.1rem;
+        transition: all .2s;
+
+        @include media.mobiles {
+            font-size: 1.4rem;
+            line-height: 2.7rem;
+        }
+
+        @include media.tablets {
+            font-size: 1.6rem;
+            line-height: 3rem;
+        }
+
+        @include media.laptops {
+            font-size: 1.7rem;
+            line-height: 3rem;
+        }
+
+        @include media.largeDesktops {
+            font-size: 1.8rem;
+            line-height: 3.1rem;
+        }
     }
 
     &__social-media {
         margin-top: 4rem;
         display: flex;
         align-items: center;
-        gap: 3rem;
+        justify-content: space-between;
+        max-width: 35rem;
 
         a {
-            border: 2px solid #5a29b076;
-            height: 55px;
-            width: 65px;
-            border-radius: .5rem;
-            font-size: 3rem;
+            color: #9e7af4 !important;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            font-size: 2.5rem;
             color: color.$white;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: all .3s;
+
+            @include media.mobiles {
+                height: 5rem;
+                width: 5rem;
+                font-size: 3rem;
+            }
+
+            @include media.laptops {
+                width: 6rem;
+                height: 6rem;
+                font-size: 3.5rem;
+            }
+
+            &:hover {
+                // background-color: #5a29b076;
+                background-color: color.$purple-dark;
+                color: color.$white !important;
+            }
         }
     }
 }
@@ -98,13 +181,24 @@
     margin: 0;
     outline: none;
     overflow: visible;
-    padding: 1.2rem 2rem;
+    padding: 1.2rem 1.5rem;
     position: relative;
     text-align: center;
     text-decoration: none;
     text-transform: none;
     transition: all 0.3s ease-in-out;
-    font-size: 1.3rem;
+    font-size: .9rem;
+    border-radius: 2rem;
+
+    @include media.mobiles {
+        font-size: 1.1rem;
+        padding: 1.2rem 1.7rem;
+    }
+
+    @include media.tablets {
+        font-size: 1.5rem;
+        padding: 1.3rem 2rem;
+    }
 }
 
 .fancy::before {

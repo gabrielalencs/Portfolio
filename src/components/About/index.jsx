@@ -60,7 +60,7 @@ const About = () => {
                 </div>
 
                 <div className="about__texts">
-                    <h3>Me chamo <span>Gabriel de Alencar</span></h3>
+                    <h3>Me chamo <br /> <span>Gabriel de Alencar</span></h3>
                     <p>Sou um Desenvolvedor Frontend, apaixonado por tecnologia e programação. Atualmente, estou no meu último ano Análise e Desenvolvimento de Sistemas. Estou sempre em busca de novos desafios e oportunidades para aprimorar minhas habilidades e conhecimentos.</p>
 
                     <div className="about__social-media">
