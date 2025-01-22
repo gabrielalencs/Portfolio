@@ -8,6 +8,10 @@
     border-radius: 1.5rem;
     padding: 3rem 2rem;
 
+    @include media.tablets {
+        height: 60.5rem;  
+    }
+
     @include media.laptops {
         margin-top: 10rem;
         margin: 20rem 5rem 0;
@@ -64,6 +68,7 @@
         font-size: 2.2rem;
         color: #fff;
         transition: all .2s;
+        margin-top: 8rem;
 
         @include media.mobiles {
             font-size: 2.6rem;
@@ -127,8 +132,8 @@
         margin-top: 4rem;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        max-width: 35rem;
+        gap: 3rem;
+        max-width: 30rem;
 
         a {
             color: #9e7af4 !important;
@@ -192,6 +197,10 @@
             justify-content: center;
         }
 
+        // @include media.laptops {
+        //     display: none;
+        // }
+
         &::after {
             content: "";
             display: block;
@@ -209,7 +218,7 @@
 
     &__graduation-infos span {
         background-color: #07000871;
-        padding: .5rem 1rem;
+        padding: .5rem .7rem;
         font-size: 1.1rem;
         color: color.$white;
         border-radius: 3rem;
@@ -217,10 +226,18 @@
 
     &__graduation-infos p {
         margin-top: 2rem;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         color: color.$white;
         line-height: 2.3rem;
         max-width: 29rem;
+
+        @include media.mobiles {
+            font-size: 1.4rem;
+        }
+
+        @include media.tablets {
+            font-size: 1.6rem;
+        }
     }
 }
 
