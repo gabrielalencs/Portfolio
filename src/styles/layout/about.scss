@@ -25,7 +25,7 @@
 
         @include media.laptops {
             display: block;
-            flex: 1;
+            flex: .8;
             display: flex;
             align-items: end;
         }
@@ -41,28 +41,26 @@
         margin-top: 3rem;
 
         @include media.laptops {
-            flex: 2;
+            flex: 1.8;
         }
     }
 
     &__buttons-infos {
         display: flex;
         gap: 2rem;
+        position: relative;
+        z-index: 15;
 
         @include media.mobiles {
             gap: 3rem;
         }
-
-        @include media.laptops {
-            margin-top: 7rem;
-        }
     }
 
     &__texts {
-        margin-top: 5rem;
+        margin-top: 4rem;
     }
 
-    &__texts h3 {
+    &__name-title {
         font-size: 2.2rem;
         color: #fff;
         transition: all .2s;
@@ -96,12 +94,13 @@
         }
     }
 
-    &__texts p {
+    &__description {
         margin-top: 1.5rem;
         font-size: 1.3rem;
         line-height: 2.4rem;
         color: #e9e9e9;
         transition: all .2s;
+        max-width: 61.6rem;
 
         @include media.mobiles {
             font-size: 1.4rem;
@@ -133,8 +132,8 @@
 
         a {
             color: #9e7af4 !important;
-            height: 40px;
-            width: 40px;
+            height: 4rem;
+            width: 4rem;
             border-radius: 50%;
             font-size: 2.5rem;
             color: color.$white;
@@ -162,6 +161,71 @@
             }
         }
     }
+
+    &__graduation-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 2rem;
+    }
+
+    &__graduation-item {
+        display: flex;
+        gap: 2rem;
+    }
+
+    &__graduation-icon {
+        background-color: color.$purple-dark;
+        color: color.$white;
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 50%;
+        font-size: 2.5rem;
+        color: color.$white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .3s;
+        position: relative;
+        display: none;
+
+        @include media.tablets {
+            display: block;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            width: .2rem;
+            height: 7.3rem;
+            background-color: #07000871;
+            position: absolute;
+            top: 4.5rem;
+        }
+    }
+
+    &__graduation-infos {
+        margin-top: 1rem;
+    }
+
+    &__graduation-infos span {
+        background-color: #07000871;
+        padding: .5rem 1rem;
+        font-size: 1.1rem;
+        color: color.$white;
+        border-radius: 3rem;
+    }
+
+    &__graduation-infos p {
+        margin-top: 2rem;
+        font-size: 1.4rem;
+        color: color.$white;
+        line-height: 2.3rem;
+        max-width: 29rem;
+    }
+}
+
+.hidden {
+    display: none !important;
 }
 
 
