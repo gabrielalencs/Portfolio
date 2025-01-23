@@ -124,7 +124,7 @@
 
         @include media.largeDesktops {
             font-size: 1.8rem;
-            line-height: 3.1rem;
+           line-height: 3.1rem;
         }
     }
 
@@ -170,8 +170,9 @@
     &__graduation-container {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        // grid-auto-flow: column; 
         row-gap: 2rem;
-        column-gap: 2rem;
+        column-gap: 2cap,                                              ;
     }
 
     &__graduation-item {

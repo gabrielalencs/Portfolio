@@ -81,7 +81,7 @@ const About = () => {
         },
         {
             id: 8,
-            date: "11/2022 - 03/2023",
+            date: "11/2023 - 03/2023",
             name: "HTML e CSS - Daniel Tapias"
         },
     ];
@@ -128,7 +128,6 @@ const About = () => {
                             </div>
                         </>
                     ) : (
-
                         <div className="about__graduation-container">
                             {graduationList.map(graduation => (
                                 <div key={graduation.id} className="about__graduation-item">
