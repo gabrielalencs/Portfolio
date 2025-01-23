@@ -1,6 +1,6 @@
 // React
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 // Styles
 
@@ -19,7 +19,6 @@ const About = () => {
 
     const [toggleAboutSections, setToggleAboutSections] = useState("biography");
     const [isAnimating, setIsAnimating] = useState(false);
-
 
     const socialMedias = [
         { id: 1, icon: FaGithub, link: "tteste" },
@@ -52,7 +51,7 @@ const About = () => {
 
 
     return (
-        <section className="about">
+        <section className="about" id="about">
             <div className="about__image">
                 <img src={Avatar} alt="Avatar de Gabriel de Alencar" />
             </div>
@@ -92,7 +91,7 @@ const About = () => {
                                 </p>
                                 <p className="about__description">
                                     Tenho experiências em React.js, Next.js, TypeScript/JavaScript,
-                                    Styled Components, Tailwind CSS. Estou sempre acompanhando as
+                                    Styled Components e Tailwind CSS. Estou sempre acompanhando as
                                     novas tendências e tecnologias, buscando garantir resultados de
                                     qualidade.
                                 </p>

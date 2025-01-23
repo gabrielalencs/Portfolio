@@ -30,7 +30,7 @@ const Introduction = () => {
                         <HiWindow />
                     </div>
 
-                    <div className="introduction__icon icon-2">
+                    <div className="introduction__icon icon-2" id="introduction">
                         <GrPersonalComputer />
                     </div>
 

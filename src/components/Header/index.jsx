@@ -103,15 +103,15 @@ const Header = () => {
                 <nav className={`header__menu-overlay ${isMenuOpen ? "open" : ""}`}>
                     <ul className="header__nav-list">
                         <li className="header__nav-item">
-                            <a href="#">Início</a>
+                            <a href="#introduction">Início</a>
                         </li>
 
                         <li className="header__nav-item">
-                            <a href="#">Sobre</a>
+                            <a href="#about">Sobre</a>
                         </li>
 
                         <li className="header__nav-item">
-                            <a href="#">Habilidades</a>
+                            <a href="#skills">Habilidades</a>
                         </li>
 
                         <li className="header__nav-item">

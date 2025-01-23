@@ -5,8 +5,9 @@ import "./styles/base/reset.scss";
 // Components
 
 import Header from "./components/Header";
-import Introduction from "./components/Introduction";
-import About from "./components/About";
+import Introduction from "./components/IntroductionSection";
+import About from "./components/AboutSection";
+import Skills from "./components/SkillsSection";
 
 const App = () => {
     return (
@@ -15,6 +16,7 @@ const App = () => {
             <main className="container">
                 <Introduction />
                 <About />
+                <Skills />
             </main>
         </>
     )
