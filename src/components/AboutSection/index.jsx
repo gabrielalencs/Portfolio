@@ -13,6 +13,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
+import { FaGraduationCap } from "react-icons/fa6";
 
 
 const About = () => {
@@ -34,16 +35,16 @@ const About = () => {
         { id: 4, date: "06/2024 - 07/2024", name: "React do básico ao avançado - Matheus Battisti" },
         { id: 5, date: "03/2024 - 05/2024", name: "JavaScript do básico ao avançado - Matheus Battisti" },
         { id: 6, date: "01/2024 - 02/2024", name: "Tailwind CSS Completo - Matheus Battisti" },
-        { id: 7, date: "10/2023 - 10/2023", name: "SASS e SCSS do Zero - Matheus Battisti" },
-        { id: 8, date: "07/2023 - 08/2023", name: "Bootstrap 5 do básico ao avançado - Matheus Battisti" },
-        { id: 9, date: "02/2023 - 05/2023", name: "HTML e CSS - Daniel Tapias" },
+        // { id: 7, date: "10/2023 - 10/2023", name: "SASS e SCSS do Zero - Matheus Battisti" },
+        // { id: 8, date: "07/2023 - 08/2023", name: "Bootstrap 5 do básico ao avançado - Matheus Battisti" },
+        // { id: 9, date: "02/2023 - 05/2023", name: "HTML e CSS - Daniel Tapias" },
     ];
 
     const toggleSections = (section) => {
-        setIsAnimating(true); 
-        
+        setIsAnimating(true);
+
         setTimeout(() => {
-            setToggleAboutSections(section); 
+            setToggleAboutSections(section);
             setIsAnimating(false);
         }, 500);
     };
@@ -111,6 +112,9 @@ const About = () => {
                                         key={graduation.id}
                                         className="about__graduation-item"
                                     >
+                                        <div className="about__graduation-icon">
+                                            <FaGraduationCap />
+                                        </div>
                                         <div className="about__graduation-infos">
                                             <span>{graduation.date}</span>
                                             <p>{graduation.name}</p>

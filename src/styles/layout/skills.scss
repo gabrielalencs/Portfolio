@@ -26,10 +26,6 @@
         @include media.tablets {
             font-size: 3.2rem;
         }
-
-        @include media.desktops {
-            font-size: 4rem;
-        }
     }
 
     &__container {
@@ -52,10 +48,10 @@
         }
 
         & div:nth-child(3) svg {
-            font-size: 7rem;
+            font-size: 6rem;
 
             @include media.tablets  {
-                font-size: 8rem;
+                font-size: 7rem;
             }
         }
 
@@ -64,20 +60,20 @@
         }
 
         & div:nth-child(4) svg {
-            font-size: 5.5rem;
+            font-size: 4.5rem;
             border-radius: .8rem;
 
             @include media.tablets {
-                font-size: 6rem;
+                font-size: 5rem;
             }
         }
 
         & div:nth-child(10) svg {
-            font-size: 6rem;
+            font-size: 5rem;
         }
 
         & div:nth-child(11) svg {
-            font-size: 6rem;
+            font-size: 5rem;
         }
     }
 
@@ -134,9 +130,5 @@
     &__icon {
         font-size: 6rem;
         color: color.$purple-secondary;
-
-        @include media.tablets {
-            font-size: 7rem;
-        }
     }
 }

@@ -13,6 +13,7 @@
     right: 0;
     width: 100%;
     z-index: 10;
+    overflow-x: hidden;
 
     @include media.tablets {
         padding: 1rem 3rem;

@@ -1,14 +1,19 @@
 @use "../base/colors.scss" as color;
 @use "../base/breakpoints.scss" as media;
 
+// * {
+//     outline: 1px solid red !important;
+// }
+
 .about {
     margin: 20rem 3rem 0;
     background-color: #181826;
     border: 2px solid #1f1f30;
     border-radius: 1.5rem;
     padding: 3rem 2rem;
+    transition: al;
 
-    @include media.tablets {
+    @include media.laptops {
         height: 57.8rem;
     }
 
@@ -170,8 +175,8 @@
 
         @include media.tablets {
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            column-gap: 3.5rem;
-            row-gap: 2.5rem;
+            column-gap: 1.5rem;
+            row-gap: 5rem;
         }
     }
 
@@ -180,38 +185,34 @@
         gap: 2rem;
     }
 
-    // &__graduation-icon {
-    //     background-color: color.$purple-dark;
-    //     color: color.$white;
-    //     width: 6.5rem;
-    //     height: 4.5rem;
-    //     border-radius: 50%;
-    //     font-size: 2.5rem;
-    //     color: color.$white;
-    //     transition: all .3s;
-    //     position: relative;
-    //     display: none;
+    &__graduation-icon {
+        background-color: color.$purple-dark;
+        color: color.$white;
+        width: 6.5rem;
+        height: 4.5rem;
+        border-radius: 50%;
+        font-size: 2.5rem;
+        color: color.$white;
+        transition: all .3s;
+        position: relative;
+        display: none;
 
-    //     // @include media.tablets {
-    //     //     display: flex;
-    //     //     align-items: center;
-    //     //     justify-content: center;
-    //     // }
+        @include media.laptops {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    //     // @include media.laptops {
-    //     //     display: none;
-    //     // }
-
-    //     &::after {
-    //         content: "";
-    //         display: block;
-    //         width: .2rem;
-    //         height: 7.3rem;
-    //         background-color: #07000871;
-    //         position: absolute;
-    //         top: 4.5rem;
-    //     }
-    // }
+        &::after {
+            content: "";
+            display: block;
+            width: .2rem;
+            height: 9rem;
+            background-color: #07000871;
+            position: absolute;
+            top: 4.5rem;
+        }
+    }
 
     &__graduation-infos {
         margin-top: 1rem;
