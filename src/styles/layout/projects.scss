@@ -4,6 +4,7 @@
 .projects {
     margin-top: 20rem;
     padding: 0 3rem;
+    position: relative;
 
     @include media.laptops {
         padding: 0 5rem;
@@ -153,6 +154,27 @@
             }
         }
     }
+
+    &__seemore-container {
+        background-color: color.$body-color;
+        transition: all .3s;
+        display: none;
+        z-index: 999;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 75%;
+
+        .seemore-video img {
+            width: 20rem;
+        }
+    }
+}
+
+.showContainerSeeMore {
+    opacity: 100 !important;
+    display: block !important;
 }
 
 

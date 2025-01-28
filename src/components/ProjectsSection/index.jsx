@@ -1,3 +1,7 @@
+// React
+
+import { useState } from "react";
+
 // Styles
 
 import "@/styles/layout/projects.scss";
@@ -6,8 +10,28 @@ import "@/styles/layout/projects.scss";
 
 import { listProjects } from "../../data/projectsData";
 
+import { IoIosCloseCircle } from "react-icons/io";
+
+import ProjectKenai from "@/assets/projects/projects__kenai.png";
+
 
 const Projects = () => {
+
+    const [isContainerSeeMore, setIsContainerSeeMore] = useState(false);
+    const [selectedProject, setSelectedProject] = useState(null);
+
+    const showSeeMore = (project) => {
+        setIsContainerSeeMore(true);
+        setSelectedProject(project);
+        document.body.classList.add("overlay");
+    }
+
+    const closeSeeMore = () => {
+        setIsContainerSeeMore(false)
+        setSelectedProject(null);
+        document.body.classList.remove("overlay");
+    };
+
     return (
         <section className="projects">
             <h2 className="projects__title">Projetos <span>.</span></h2>
@@ -32,19 +56,42 @@ const Projects = () => {
 
                         <div className="projects__buttons">
                             {project.links.map((link, index) => (
-                                <a 
-                                    key={index} 
-                                    href={link.link} 
-                                    target="_blank" 
+                                <a
+                                    key={index}
+                                    href={link.link}
+                                    target="_blank"
                                     rel="noopener"
                                 >
                                     {link.name}
                                 </a>
                             ))}
-                            <button>Ver mais</button>
+                            <button onClick={() => showSeeMore(project)}>Ver mais</button>
                         </div>
                     </div>
                 ))}
+
+
+                <div className={`projects__seemore-container ${isContainerSeeMore ? "showContainerSeeMore" : ""}`}>
+                    <div>
+                        <div className="seemore-video">
+                            <img src={ProjectKenai} alt="" />
+                            <IoIosCloseCircle onClick={closeSeeMore} />
+                        </div>
+                        <div className="seemore-buttons">
+                            <button>Ver mais</button>
+                            <button>Ver mais</button>
+                        </div>
+                    </div>
+
+                    <div className="seemore-content">
+                        <div className="seemore-title">
+                            <h3>Kenai Movies</h3>
+                        </div>
+                        <p className="seemore-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium consequatur dolores impedit eius similique vero quo nemo tempore non? Minima officiis praesentium reiciendis tempora adipisci ratione magni, sit sed fugit.</p>
+                        <p className="seemore-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium consequatur dolores impedit eius similique vero quo nemo tempore non? Minima officiis praesentium reiciendis tempora adipisci ratione magni, sit sed fugit.</p>
+                        <span className="seemore-date">17 de Março de 2022</span>
+                    </div>
+                </div>
             </div>
         </section>
     )
