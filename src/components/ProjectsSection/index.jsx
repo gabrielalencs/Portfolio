@@ -2,45 +2,49 @@
 
 import "@/styles/layout/projects.scss";
 
-// Images
+// Data
 
-import ProjectKenai from "@/assets/projects/projects__kenai.png";
+import { listProjects } from "../../data/projectsData";
 
-import { FaReact } from "react-icons/fa";
-import { SiVite } from "react-icons/si";
-import { FaSass } from "react-icons/fa";
 
 const Projects = () => {
-
-    const projects = [
-        {}
-    ]
-
     return (
         <section className="projects">
             <h2 className="projects__title">Projetos <span>.</span></h2>
 
             <div className="projects__container">
-                {/* <div className="projects__item">
-                    <div className="projects__image">
-                        <img src={teste} alt="" />
+                {listProjects.map(project => (
+                    <div key={project.id} className="projects__item">
+                        <div className="projects__image">
+                            <img src={project.image} alt={`${project.title} Image`} />
 
-                        <div className="projects__cover-container">
-                            <span className="projects__name-cover">Kenai Movies</span>
-                            <div className="projects__cover-techs">
-                                <FaReact />
-                                <SiVite />
-                                <FaSass />
+                            <div className="projects__cover-container">
+                                <span className="projects__name-cover">{project.title}</span>
+                                <div className="projects__cover-techs">
+                                    {project.technologies.map((TechIcon, index) => (
+                                        <span key={index} className="projects__tech-icon">
+                                            <TechIcon />
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div className="projects__buttons">
-                        <button>Deploy</button>
-                        <button>Repositório</button>
-                        <button>Ver mais</button>
+                        <div className="projects__buttons">
+                            {project.links.map((link, index) => (
+                                <a 
+                                    key={index} 
+                                    href={link.link} 
+                                    target="_blank" 
+                                    rel="noopener"
+                                >
+                                    {link.name}
+                                </a>
+                            ))}
+                            <button>Ver mais</button>
+                        </div>
                     </div>
-                </div> */}
+                ))}
             </div>
         </section>
     )

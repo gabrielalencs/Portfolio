@@ -1,10 +1,6 @@
 @use "../base/colors.scss" as color;
 @use "../base/breakpoints.scss" as media;
 
-// * {
-//     outline: 1px solid red !important;
-// }
-
 .about {
     margin: 20rem 3rem 0;
     background-color: #181826;
@@ -56,8 +52,8 @@
     &__buttons-infos {
         display: flex;
         gap: 2rem;
-        position: relative;
-        z-index: 15;
+        // position: relative;
+        // z-index: 15;
 
         @include media.mobiles {
             gap: 3rem;

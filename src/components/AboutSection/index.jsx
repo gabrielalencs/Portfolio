@@ -85,7 +85,7 @@ const About = () => {
                                 </p>
 
                                 <div className="about__social-media">
-                                    {socialMedias.map((media) => (
+                                    {socialMedias.map(media => (
                                         <a key={media.id} href={media.link}>
                                             <media.icon />
                                         </a>
