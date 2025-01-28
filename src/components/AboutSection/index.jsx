@@ -15,9 +15,11 @@ import { MdEmail } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 import { FaGraduationCap } from "react-icons/fa6";
 
+// Data
+
+import { listGraduation } from "../../data/graduationData";
 
 const About = () => {
-
     const [toggleAboutSections, setToggleAboutSections] = useState("biography");
     const [isAnimating, setIsAnimating] = useState(false);
 
@@ -28,18 +30,6 @@ const About = () => {
         { id: 4, icon: MdEmail, link: "sdfsd" },
     ];
 
-    const graduationList = [
-        { id: 1, date: "02/2022 - 12/2024", name: "Técnico em Desenvolvimento de Sistemas - Etec Raposo Tavares" },
-        { id: 2, date: "02/2025 - 02/2025", name: "Next do Zero ao Avançado - Matheus Battisti" },
-        { id: 3, date: "10/2024 - 11/2024", name: "TypeScript do básico ao Avançado - Matheus Battisti" },
-        { id: 4, date: "06/2024 - 07/2024", name: "React do básico ao avançado - Matheus Battisti" },
-        { id: 5, date: "03/2024 - 05/2024", name: "JavaScript do básico ao avançado - Matheus Battisti" },
-        { id: 6, date: "01/2024 - 02/2024", name: "Tailwind CSS Completo - Matheus Battisti" },
-        // { id: 7, date: "10/2023 - 10/2023", name: "SASS e SCSS do Zero - Matheus Battisti" },
-        // { id: 8, date: "07/2023 - 08/2023", name: "Bootstrap 5 do básico ao avançado - Matheus Battisti" },
-        // { id: 9, date: "02/2023 - 05/2023", name: "HTML e CSS - Daniel Tapias" },
-    ];
-
     const toggleSections = (section) => {
         setIsAnimating(true);
 
@@ -48,8 +38,6 @@ const About = () => {
             setIsAnimating(false);
         }, 500);
     };
-
-
 
     return (
         <section className="about" id="about">
@@ -82,7 +70,6 @@ const About = () => {
                                 <h3 className="about__name-title">
                                     Me chamo <br /> <span>Gabriel de Alencar</span>
                                 </h3>
-
                                 <p className="about__description">
                                     Sou um Desenvolvedor Frontend, apaixonado por tecnologia e
                                     programação. Atualmente, sou formado no curso técnico de Análise
@@ -107,7 +94,7 @@ const About = () => {
                             </div>
                         ) : (
                             <div className="about__graduation-container">
-                                {graduationList.map((graduation) => (
+                                {listGraduation.map((graduation) => (
                                     <div
                                         key={graduation.id}
                                         className="about__graduation-item"
@@ -115,6 +102,7 @@ const About = () => {
                                         <div className="about__graduation-icon">
                                             <FaGraduationCap />
                                         </div>
+
                                         <div className="about__graduation-infos">
                                             <span>{graduation.date}</span>
                                             <p>{graduation.name}</p>

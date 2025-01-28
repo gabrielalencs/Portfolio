@@ -4,19 +4,24 @@ import "@/styles/layout/projects.scss";
 
 // Images
 
-import teste from "@/assets/projects/projects__kenai.png";
+import ProjectKenai from "@/assets/projects/projects__kenai.png";
 
 import { FaReact } from "react-icons/fa";
 import { SiVite } from "react-icons/si";
 import { FaSass } from "react-icons/fa";
 
 const Projects = () => {
+
+    const projects = [
+        {}
+    ]
+
     return (
         <section className="projects">
             <h2 className="projects__title">Projetos <span>.</span></h2>
 
             <div className="projects__container">
-                <div className="projects__item">
+                {/* <div className="projects__item">
                     <div className="projects__image">
                         <img src={teste} alt="" />
 
@@ -35,7 +40,7 @@ const Projects = () => {
                         <button>Repositório</button>
                         <button>Ver mais</button>
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     )

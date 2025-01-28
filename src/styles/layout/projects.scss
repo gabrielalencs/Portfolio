@@ -33,15 +33,37 @@
     }
 
     &__container {
-        margin-top: 7rem;
+        margin-top: 5rem;
     }
 
     &__item {
         width: max-content;
+        cursor: pointer;
+        transition: all .3s; 
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &:hover .projects__buttons {
+            transform: translateY(0);
+            opacity: 100;
+            z-index: 1;
+        }
     }
 
     &__image {
         position: relative;
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 0.3rem;
+            bottom: 0.3rem;
+            background-image: linear-gradient(90deg, #8257E6 0%, #A40EE4 92.32%);
+        }
 
         &::before {
             content: "";
@@ -57,20 +79,8 @@
         img {
             width: 45rem;
             border-radius: 2rem 2rem 0 0;
-            border: 2px solid #24242462;
-            border-bottom: none;
+            transition: all .2s;
         }
-
-        // &::after {
-        //     content: "";
-        //     display: block;
-        //     position: absolute;
-        //     width: 100%;
-        //     height: 0.3rem;
-        //     bottom: 0.1rem;
-        //     border-radius: 1rem;
-        //     background-image: linear-gradient(90deg, #8257E6 0%, #A40EE4 92.32%);
-        // }
 
         .projects__cover-container {
             position: absolute;
@@ -100,13 +110,18 @@
     }
 
     .projects__buttons {
-        margin-top: .2rem;
+        margin-top: -.3rem;
         padding: 1.5rem;
         background-color: #03000541;
         border-radius: 0 0 2rem 2rem;
         display: flex;
         justify-content: center;
         gap: 1.5rem;
+        transition: all .7s ease;
+        transform: translateY(-7rem);
+        opacity: 0;
+        position: relative;
+        z-index: -5;
 
         button {
             padding: .7rem 2rem;
@@ -114,6 +129,26 @@
             font-weight: 600;
             color: #fff;
             border-radius: 3rem;
+            border: 2px solid color.$purple-dark;
+            transition: all .3s;
+            cursor: pointer;
+
+            &:hover {
+                background-color: transparent;
+            }
         }
+    }
+}
+
+
+@keyframes showDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-200%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
