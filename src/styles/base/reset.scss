@@ -14,7 +14,7 @@ html {
 
 body {
     background-color: color.$body-color;
-    margin-bottom: 5000rem;
+    margin-bottom: 5000rem; 
     overflow-x: hidden !important;
 }
 
@@ -34,7 +34,7 @@ button {
 }
 
 body.overlay {
-    overflow: hidden;
+    height: 80rem;
 
     &::after {
         content: "";

@@ -10,31 +10,38 @@ import "@/styles/layout/projects.scss";
 
 import { listProjects } from "../../data/projectsData";
 
-import { IoIosCloseCircle } from "react-icons/io";
+// Icons
+
+import { IoIosClose } from "react-icons/io";
+
+// Utils
+
+import { scrollToProjects } from "../../utils/scrollToProjects";
+import { hideOverlay, showOverlay } from "../../utils/toggleOverlayBody";
+
 
 import ProjectKenai from "@/assets/projects/projects__kenai.png";
 
-
 const Projects = () => {
-
     const [isContainerSeeMore, setIsContainerSeeMore] = useState(false);
     const [selectedProject, setSelectedProject] = useState(null);
 
     const showSeeMore = (project) => {
         setIsContainerSeeMore(true);
         setSelectedProject(project);
-        document.body.classList.add("overlay");
+        showOverlay();
+        scrollToProjects();
     }
 
     const closeSeeMore = () => {
         setIsContainerSeeMore(false)
         setSelectedProject(null);
-        document.body.classList.remove("overlay");
+        hideOverlay();
     };
 
     return (
         <section className="projects">
-            <h2 className="projects__title">Projetos <span>.</span></h2>
+            <h2 className="projects__title" id="project">Projetos <span>.</span></h2>
 
             <div className="projects__container">
                 {listProjects.map(project => (
@@ -72,11 +79,11 @@ const Projects = () => {
 
 
                 <div className={`projects__seemore-container ${isContainerSeeMore ? "showContainerSeeMore" : ""}`}>
-                    <div>
+                    <div className="seemore-video-container">
                         <div className="seemore-video">
                             <img src={ProjectKenai} alt="" />
-                            <IoIosCloseCircle onClick={closeSeeMore} />
                         </div>
+
                         <div className="seemore-buttons">
                             <button>Ver mais</button>
                             <button>Ver mais</button>
@@ -86,10 +93,16 @@ const Projects = () => {
                     <div className="seemore-content">
                         <div className="seemore-title">
                             <h3>Kenai Movies</h3>
+                            <IoIosClose onClick={closeSeeMore} />
                         </div>
+                        
                         <p className="seemore-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium consequatur dolores impedit eius similique vero quo nemo tempore non? Minima officiis praesentium reiciendis tempora adipisci ratione magni, sit sed fugit.</p>
+                        <ul className="seemore-list">
+                            <li>Tech1</li>
+                            <li>Tech1</li>
+                            <li>Tech1</li>
+                        </ul>
                         <p className="seemore-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium consequatur dolores impedit eius similique vero quo nemo tempore non? Minima officiis praesentium reiciendis tempora adipisci ratione magni, sit sed fugit.</p>
-                        <span className="seemore-date">17 de Março de 2022</span>
                     </div>
                 </div>
             </div>

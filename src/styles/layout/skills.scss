@@ -32,12 +32,8 @@
         margin-top: 5rem;
         display: grid;
         gap: 4rem;
-        grid-template-columns: repeat(1, 1fr);
-        max-width: max-content;
-
-        @include media.mobiles {
         grid-template-columns: repeat(2, 1fr);
-        }
+        max-width: max-content;
 
         @include media.tablets {
             grid-template-columns: repeat(4, 1fr);
