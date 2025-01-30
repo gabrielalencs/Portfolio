@@ -1,0 +1,163 @@
+@use "../base/colors.scss" as color;
+@use "../base/breakpoints.scss" as media;
+
+.contact {
+    margin-top: 20rem;
+    padding: 0 3rem;
+    position: relative;
+
+    @include media.laptops {
+        padding: 0 5rem;
+    }
+
+    &__title {
+        font-size: 2.2rem;
+        color: #fff;
+        transition: all .2s;
+        font-weight: 500;
+
+        span {
+            color: color.$purple-secondary;
+        }
+
+        @include media.mobiles {
+            font-size: 3rem;
+        }
+
+        @include media.tablets {
+            font-size: 3.2rem;
+        }
+
+        // @include media.desktops {
+        //     font-size: 4rem;
+        // }
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__icons-container {
+        margin-top: 3rem;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 40rem;
+        gap: 3rem;
+    }
+
+    &__container-icon {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-grow: 1;
+        height: 100px;
+        background-color: #15151528;
+        position: relative;
+        border: 1px solid #1f1f1f8c;
+        border-radius: 4px;
+        transition: 1s all ease;
+        opacity: 1;
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        transition: 1s, opacity 2s cubic-bezier(0.5, 0, 0, 1), transform 2s cubic-bezier(0.5, 0, 0, 1);
+        cursor: pointer;
+        
+        &:hover {
+            border: 1px solid #986dff;
+        }
+    }
+
+    &__icon {
+        color: color.$purple-primary;
+        font-size: 5rem;
+    }
+
+    &__text-form {
+        margin-top: 3.5rem;
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: color.$purple-white;
+        max-width: 60rem;
+    }
+
+    &__form {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: max-content;
+    }
+
+    &__form-row {
+        display: flex;
+        gap: 2rem;
+    }
+}
+
+
+// Inputs
+
+.input-group {
+    position: relative;
+}
+
+.input-contact {
+    border: solid 2px color.$gray;
+    border-radius: 1rem;
+    background: none;
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+    color: #f5f5f5;
+    transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+}
+
+.user-label {
+    position: absolute;
+    left: 15px;
+    color: #e8e8e8;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.input-contact:focus,
+input:valid {
+    outline: none;
+    border: 2px solid color.$purple-dark;
+}
+
+.input-contact:focus~label,
+input:valid~label {
+    transform: translateY(-50%) scale(0.8);
+    background-color: color.$body-color;
+    padding: 0 .5em;
+    color: color.$white;
+    font-size: 1.7rem;
+}
+
+.contact-button {
+    background-color: #6B17B9;
+    padding: 1rem 2.5rem;
+    background-color: color.$purple-dark;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 1rem;
+    border: 2px solid color.$purple-dark;
+    transition: all .3s;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: transparent;
+    }
+}
+
+.input-message {
+    width: 100%;
+    resize: none;
+}
