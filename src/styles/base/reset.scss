@@ -34,7 +34,7 @@ button {
 }
 
 body.overlay {
-    height: 80rem;
+    overflow-y: hidden !important;
 
     &::after {
         content: "";

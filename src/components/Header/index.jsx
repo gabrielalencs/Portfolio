@@ -119,7 +119,7 @@ const Header = () => {
                         </li>
 
                         <li className="header__nav-item">
-                            <a href="#">Contato</a>
+                            <a href="#contact">Contato</a>
                         </li>
                     </ul>
                 </nav>

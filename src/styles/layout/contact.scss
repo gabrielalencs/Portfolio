@@ -34,16 +34,28 @@
     }
 
     &__container {
+        margin-top: 2.5rem;
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
+        gap: 5rem;
+
+        @include media.laptops {
+            flex-direction: row;
+        }
     }
 
     &__icons-container {
         margin-top: 3rem;
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        max-width: 40rem;
+        width: 100%;
+        max-width: 42.3rem;
         gap: 3rem;
+
+        @include media.laptops {
+            max-width: 40rem;
+        }
     }
 
     &__container-icon {
@@ -63,7 +75,7 @@
         transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
         transition: 1s, opacity 2s cubic-bezier(0.5, 0, 0, 1), transform 2s cubic-bezier(0.5, 0, 0, 1);
         cursor: pointer;
-        
+
         &:hover {
             border: 1px solid #986dff;
         }
@@ -75,24 +87,54 @@
     }
 
     &__text-form {
-        margin-top: 3.5rem;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         font-weight: 400;
         color: color.$purple-white;
+        width: 100%;
+        line-height: 2.6rem;
         max-width: 60rem;
+
+        @include media.mobiles {
+            font-size: 1.5rem;
+            line-height: 2.7rem;
+        }
+
+        @include media.tablets {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__form-title {
+        font-size: 2.2rem;
+        color: color.$purple-secondary;
+        font-weight: 600;
+        transition: all .2s;
+
+        @include media.mobiles {
+            font-size: 2.6rem;
+        }
     }
 
     &__form {
         margin-top: 3rem;
         display: flex;
-        flex-direction: column;
         gap: 2rem;
-        width: max-content;
+        flex-direction: column;
+        max-width: 56rem;
+
+        @include media.laptops {
+            max-width: 100%;
+        }
     }
 
     &__form-row {
         display: flex;
+        flex-direction: column;
         gap: 2rem;
+
+        @include media.laptops {
+            flex-direction: row;
+        }
     }
 }
 
@@ -126,13 +168,17 @@
 }
 
 .input-contact:focus,
-input:valid {
+.input-contact.filled,
+.input-message:focus,
+.input-message.filled {
     outline: none;
     border: 2px solid color.$purple-dark;
 }
 
-.input-contact:focus~label,
-input:valid~label {
+.input-contact:focus~.user-label,
+.input-contact.filled~.user-label,
+.input-message:focus~.user-label,
+.input-message.filled~.user-label {
     transform: translateY(-50%) scale(0.8);
     background-color: color.$body-color;
     padding: 0 .5em;

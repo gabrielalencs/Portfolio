@@ -1,5 +1,5 @@
 export function scrollToProjects() {
-    document.getElementById("project").scrollIntoView({
+    document.getElementById("projects").scrollIntoView({
         behavior: "smooth",
     });
 }
