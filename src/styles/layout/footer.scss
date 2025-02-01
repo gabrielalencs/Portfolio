@@ -1,0 +1,49 @@
+@use "../base/colors.scss" as color;
+@use "../base/breakpoints.scss" as media;
+
+.footer{
+    margin-top: 20rem;
+    background-color: #0F0E18;
+
+    .container {
+        padding: 2rem 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media.tablets {
+            justify-content: flex-start;
+            gap: 2rem;
+        }
+
+        @include media.laptops {
+            padding: 0 5rem;
+        }
+    }
+
+    &__image {
+        width: 12rem;
+
+        @include media.mobiles {
+            width: 13rem;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__text-copy {
+        color: color.$white;
+        font-size: 1.5rem;
+        font-weight: 400;
+
+        @include media.mobiles {
+            font-size: 1.6rem;
+        }
+
+        @include media.tablets {
+            font-size: 1.6rem;
+        }
+    }
+}

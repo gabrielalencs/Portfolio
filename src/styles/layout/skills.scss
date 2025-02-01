@@ -40,6 +40,10 @@
         }
 
         @include media.laptops {
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        @include media.desktops {
             grid-template-columns: repeat(6, 1fr);
         }
 

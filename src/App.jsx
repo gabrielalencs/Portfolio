@@ -10,6 +10,7 @@ import About from "./components/AboutSection";
 import Skills from "./components/SkillsSection";
 import Projects from "./components/ProjectsSection";
 import Contact from "./components/ContactSection";
+import Footer from "./components/Footer";
 
 const App = () => {
     return (
@@ -22,6 +23,7 @@ const App = () => {
                 <Projects />
                 <Contact />
             </main>
+            <Footer />
         </>
     )
 }
