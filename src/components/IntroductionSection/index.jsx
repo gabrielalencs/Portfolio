@@ -9,7 +9,6 @@ import { HiWindow } from "react-icons/hi2";
 import { GrPersonalComputer } from "react-icons/gr";
 import { GrTechnology } from "react-icons/gr";
 
-
 const Introduction = () => {
     return (
         <section className="introduction">
@@ -41,6 +40,6 @@ const Introduction = () => {
             </div>
         </section>
     )
-}
+};
 
 export default Introduction

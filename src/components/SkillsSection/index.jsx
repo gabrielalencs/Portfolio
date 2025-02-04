@@ -21,6 +21,6 @@ const Skills = () => {
             </div>
         </section>
     )
-}
+};
 
 export default Skills;
