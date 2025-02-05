@@ -77,54 +77,57 @@ const Header = () => {
 
     return (
         <header
-            className={`header container ${hasScrolled ? "scrolled" : ""}`}
-            ref={headerRef}
+            className="header-container"
+            // ref={headerRef}
         >
-            <div className="header__logo">
-                <img src={Logo} alt="Logo Portfólio" />
-            </div>
-
-            <div>
-                <div>
-                    <input
-                        type="checkbox"
-                        id="menu-checkbox"
-                        className="header__checkbox"
-                        checked={isMenuOpen}
-                        onChange={toggleMenu}
-                    />
-                    <label htmlFor="menu-checkbox" className="header__toggle-checkbox">
-                        <div className="header__checkbox-bars" id="bar1"></div>
-                        <div className="header__checkbox-bars" id="bar2"></div>
-                        <div className="header__checkbox-bars" id="bar3"></div>
-                    </label>
+            <div className={`header container ${hasScrolled ? "scrolled" : ""}`} ref={headerRef}>
+                <div className="header__logo">
+                    <img src={Logo} alt="Logo Portfólio" />
                 </div>
 
-                <nav className={`header__menu-overlay ${isMenuOpen ? "open" : ""}`}>
-                    <ul className="header__nav-list">
-                        <li className="header__nav-item">
-                            <a href="#introduction">Início</a>
-                        </li>
+                <div>
+                    <nav className={`header__menu-overlay ${isMenuOpen ? "open" : ""}`}>
+                        <ul className="header__nav-list">
+                            <li className="header__nav-item">
+                                <a href="#introduction">Início</a>
+                            </li>
 
-                        <li className="header__nav-item">
-                            <a href="#about">Sobre</a>
-                        </li>
+                            <li className="header__nav-item">
+                                <a href="#about">Sobre</a>
+                            </li>
 
-                        <li className="header__nav-item">
-                            <a href="#skills">Habilidades</a>
-                        </li>
+                            <li className="header__nav-item">
+                                <a href="#skills">Habilidades</a>
+                            </li>
 
-                        <li className="header__nav-item">
-                            <a href="#projects">Projetos</a>
-                        </li>
+                            <li className="header__nav-item">
+                                <a href="#projects">Projetos</a>
+                            </li>
 
-                        <li className="header__nav-item">
-                            <a href="#contact">Contato</a>
-                        </li>
-                    </ul>
-                </nav>
+                            <li className="header__nav-item">
+                                <a href="#contact">Contato</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div className="button-menu-mobile-container">
+                <input
+                    type="checkbox"
+                    id="menu-checkbox"
+                    className="header__checkbox"
+                    checked={isMenuOpen}
+                    onChange={toggleMenu}
+                />
+                <label htmlFor="menu-checkbox" className="header__toggle-checkbox">
+                    <div className="header__checkbox-bars" id="bar1"></div>
+                    <div className="header__checkbox-bars" id="bar2"></div>
+                    <div className="header__checkbox-bars" id="bar3"></div>
+                </label>
             </div>
         </header>
+
     )
 };
 

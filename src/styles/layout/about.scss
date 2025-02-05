@@ -14,13 +14,9 @@
     }
 
     @include media.laptops {
-        margin: 10rem 5rem 0;
+        margin: 20rem 5rem 0;
         display: flex;
         gap: 2rem;
-    }
-
-    @include media.largeDesktops {
-        margin-top: 0;
     }
 
     &__image {
@@ -117,11 +113,6 @@
             font-size: 1.7rem;
             line-height: 3rem;
             max-width: 69rem;
-        }
-
-        @include media.largeDesktops {
-            font-size: 1.8rem;
-            line-height: 3.2rem;
         }
     }
 

@@ -17,6 +17,11 @@ body {
     overflow-x: hidden !important;
 }
 
+#root {
+    max-width: 215rem;
+    margin: 0 auto;
+}
+
 a {
     text-decoration: none;
     color: inherit;

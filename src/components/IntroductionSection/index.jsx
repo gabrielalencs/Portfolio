@@ -11,7 +11,7 @@ import { GrTechnology } from "react-icons/gr";
 
 const Introduction = () => {
     return (
-        <section className="introduction">
+        <section className="introduction" id="introduction">
             <div className="introduction__content">
                 <h1 className="introduction__name-text">Eu sou o Gabriel de Alencar</h1>
                 <h2 className="introduction__role-text">Desenvolvedor Frontend</h2>

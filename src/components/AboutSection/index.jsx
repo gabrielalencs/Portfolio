@@ -24,20 +24,32 @@ const About = () => {
     const [isAnimating, setIsAnimating] = useState(false);
 
     const socialMedias = [
-        { id: 1, icon: FaGithub, link: "tteste" },
-        { id: 2, icon: FaLinkedin, link: "sdsd" },
-        { id: 3, icon: FaInstagram, link: "sdgfshg" },
-        { id: 4, icon: MdEmail, link: "sdfsd" },
+        { id: 1, icon: FaGithub, link: "https://github.com/gabrielalencs/" },
+        { id: 2, icon: FaLinkedin, link: "https://linkedin.com/in/gabrieldealencarr" },
+        { id: 3, icon: FaInstagram, link: "https://www.instagram.com/alencsblz/" },
+        { id: 4, icon: MdEmail, link: "mailto:gabrieldealencar.dev@gmail.com" },
     ];
 
     const toggleSections = (section) => {
         setIsAnimating(true);
+
+        
 
         setTimeout(() => {
             setToggleAboutSections(section);
             setIsAnimating(false);
         }, 500);
     };
+
+    if (toggleAboutSections == "biography") {
+        document.querySelector(".buttonBiography")?.setAttribute("disabled", true);
+        document.querySelector(".buttonGraduation")?.removeAttribute("disabled");
+    }
+
+    if (toggleAboutSections == "graduation") {
+        document.querySelector(".buttonGraduation")?.setAttribute("disabled", true);
+        document.querySelector(".buttonBiography")?.removeAttribute("disabled");
+    }
 
     return (
         <section className="about" id="about">
@@ -47,14 +59,14 @@ const About = () => {
 
             <div className="about__container-texts">
                 <div className="about__buttons-infos">
-                    <button className="fancy" onClick={() => toggleSections("biography")}>
+                    <button className="fancy buttonBiography" onClick={() => toggleSections("biography")}>
                         <span className="top-key"></span>
                         <span className="text">Sobre</span>
                         <span className="bottom-key-1"></span>
                         <span className="bottom-key-2"></span>
                     </button>
 
-                    <button className="fancy" onClick={() => toggleSections("graduation")}>
+                    <button className="fancy buttonGraduation" onClick={() => toggleSections("graduation")}>
                         <span className="top-key"></span>
                         <span className="text">Formação</span>
                         <span className="bottom-key-1"></span>
@@ -86,7 +98,12 @@ const About = () => {
 
                                 <div className="about__social-media">
                                     {socialMedias.map(media => (
-                                        <a key={media.id} href={media.link}>
+                                        <a
+                                            key={media.id}
+                                            href={media.link}
+                                            target="_blank"
+                                            rel="noopener"
+                                        >
                                             <media.icon />
                                         </a>
                                     ))}
