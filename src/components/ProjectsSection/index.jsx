@@ -1,20 +1,43 @@
 // Styles
-
 import "@/styles/layout/projects.scss";
 
 // Data
-
 import { listProjects } from "../../data/projectsData";
-
+import { useState, useEffect } from "react";
 
 const Projects = () => {
+    const [activeCardId, setActiveCardId] = useState(null);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 480);
+        };
+
+        handleResize(); 
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    const handleProjectClick = (id) => {
+        if (isMobile) {
+            setActiveCardId((prev) => (prev === id ? null : id));
+        }
+    };
+
     return (
         <section className="projects">
-            <h2 className="projects__title" id="projects">Projetos <span>.</span></h2>
+            <h2 className="projects__title" id="projects">
+                Projetos <span>.</span>
+            </h2>
 
             <div className="projects__container">
-                {listProjects.map(project => (
-                    <div key={project.id} className="projects__item">
+                {listProjects.map((project) => (
+                    <div
+                        key={project.id}
+                        className={`projects__item ${activeCardId === project.id ? "active" : ""}`}
+                        onClick={() => handleProjectClick(project.id)}
+                    >
                         <div className="projects__image">
                             <img src={project.image} alt={`${project.title} Image`} />
 
@@ -46,7 +69,7 @@ const Projects = () => {
                 ))}
             </div>
         </section>
-    )
+    );
 };
 
-export default Projects
+export default Projects;

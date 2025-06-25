@@ -56,16 +56,17 @@
         transition: all .3s;
         height: 25rem;
 
+        &.active,
         &:hover {
             transform: scale(1.1);
             position: relative;
             z-index: 55;
-        }
 
-        &:hover .projects__buttons {
-            transform: translateY(0);
-            opacity: 100;
-            z-index: 5;
+            .projects__buttons {
+                transform: translateY(0);
+                opacity: 100;
+                z-index: 5;
+            }
         }
     }
 

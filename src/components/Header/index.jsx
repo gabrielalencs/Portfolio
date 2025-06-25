@@ -25,6 +25,13 @@ const Header = () => {
         }
     };
 
+    const closeMenu = () => {
+        if (window.innerWidth < 768) {
+            setIsMenuOpen(false);
+            document.body.style.overflow = "auto";
+        }
+    };
+
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth > 768) {
@@ -78,7 +85,7 @@ const Header = () => {
     return (
         <header
             className="header-container"
-            // ref={headerRef}
+        // ref={headerRef}
         >
             <div className={`header container ${hasScrolled ? "scrolled" : ""}`} ref={headerRef}>
                 <div className="header__logo">
@@ -88,23 +95,23 @@ const Header = () => {
                 <div>
                     <nav className={`header__menu-overlay ${isMenuOpen ? "open" : ""}`}>
                         <ul className="header__nav-list">
-                            <li className="header__nav-item">
+                            <li className="header__nav-item" onClick={closeMenu}>
                                 <a href="#introduction">Início</a>
                             </li>
 
-                            <li className="header__nav-item">
+                            <li className="header__nav-item" onClick={closeMenu}>
                                 <a href="#about">Sobre</a>
                             </li>
 
-                            <li className="header__nav-item">
+                            <li className="header__nav-item" onClick={closeMenu}>
                                 <a href="#skills">Habilidades</a>
                             </li>
 
-                            <li className="header__nav-item">
+                            <li className="header__nav-item" onClick={closeMenu}>
                                 <a href="#projects">Projetos</a>
                             </li>
 
-                            <li className="header__nav-item">
+                            <li className="header__nav-item" onClick={closeMenu}>
                                 <a href="#contact">Contato</a>
                             </li>
                         </ul>
