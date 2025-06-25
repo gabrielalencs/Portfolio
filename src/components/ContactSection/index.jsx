@@ -11,12 +11,12 @@ import "@/styles/layout/contact.scss";
 import { listContacts } from "../../data/contactsData";
 
 const Contact = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [subject, setSubject] = useState('');
-    const [message, setMessage] = useState('');
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [subject, setSubject] = useState("");
+    const [message, setMessage] = useState("");
 
-    const isFilled = (value) => value.trim() !== '';
+    const isFilled = (value) => value.trim() !== "";
 
     return (
         <section className="contact">
@@ -28,9 +28,13 @@ const Contact = () => {
 
                     <div className="contact__icons-container">
                         {listContacts.map(contact => (
-                            <div className="contact__container-icon" key={contact.id}>
+                            <a 
+                                className="contact__container-icon"
+                                href={contact.link} 
+                                key={contact.id}
+                            >
                                 <contact.icon className="contact__icon" />
-                            </div>
+                            </a>
                         ))}
                     </div>
                 </div>
@@ -46,7 +50,7 @@ const Contact = () => {
                                     type="text"
                                     name="name"
                                     autoComplete="off"
-                                    className={`input-contact ${isFilled(name) ? 'filled' : ''}`}
+                                    className={`input-contact ${isFilled(name) ? "filled" : ""}`}
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
                                 />
@@ -59,7 +63,7 @@ const Contact = () => {
                                     type="email"
                                     name="email"
                                     autoComplete="off"
-                                    className={`input-contact ${isFilled(email) ? 'filled' : ''}`}
+                                    className={`input-contact ${isFilled(email) ? "filled" : ""}`}
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                 />
@@ -73,7 +77,7 @@ const Contact = () => {
                                 type="text"
                                 name="subject"
                                 autoComplete="off"
-                                className={`input-contact ${isFilled(subject) ? 'filled' : ''}`}
+                                className={`input-contact ${isFilled(subject) ? "filled" : ""}`}
                                 value={subject}
                                 onChange={(e) => setSubject(e.target.value)}
                             />
@@ -86,7 +90,7 @@ const Contact = () => {
                                 name="text"
                                 autoComplete="off"
                                 rows={5}
-                                className={`input-contact input-message ${isFilled(message) ? 'filled' : ''}`}
+                                className={`input-contact input-message ${isFilled(message) ? "filled" : ""}`}
                                 value={message}
                                 onChange={(e) => setMessage(e.target.value)}
                             />

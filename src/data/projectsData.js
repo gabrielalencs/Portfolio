@@ -1,6 +1,7 @@
 // Images
 
 import ProjectKenai from "@/assets/projects/projects__kenai.png";
+import ProjectQuickNotes from "@/assets/projects/projects_quick-notes.png";
 import ProjectFrontendMentor from "@/assets/projects/projects__frontend-mentor.png";
 import ProjectCodelab from "@/assets/projects/projects__codelab.png";
 import ProjectMenuOnline from "@/assets/projects/projects__menu-online.png";
@@ -27,6 +28,16 @@ export const listProjects = [
     },
     {
         id: 2,
+        image: ProjectQuickNotes,
+        title: "Quick Notes",
+        technologies: [FaReact, RiTailwindCssFill, SiVite],
+        links: [
+            { name: "Deploy", link: "https://quick-notes-company.vercel.app/" },
+            { name: "Repo", link: "https://github.com/gabrielalencs/Quick-Notes" },
+        ]
+    },
+    {
+        id: 3,
         image: ProjectMenuOnline,
         title: "Menu Online",
         technologies: [FaHtml5, FaCss3Alt, RiJavascriptFill, FaSass],
@@ -36,7 +47,7 @@ export const listProjects = [
         ]
     },
     {
-        id: 3,
+        id: 4,
         image: ProjectFrontendMentor,
         title: "Vitrine Frontend Mentor",
         technologies: [FaReact, FaSass, RiTailwindCssFill],
@@ -46,7 +57,7 @@ export const listProjects = [
         ]
     },
     {
-        id: 4,
+        id: 5,
         image: ProjectCodelab,
         title: "Vitrine CodeLab",
         technologies: [FaReact, FaSass, RiTailwindCssFill, SiStyledcomponents],

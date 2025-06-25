@@ -107,7 +107,7 @@
     }
 
     .avatar-container {
-        position: relative; 
+        position: relative;
         z-index: 1;
         background: url("@/assets/Gradient.svg");
         background-repeat: no-repeat;
@@ -119,6 +119,7 @@
             width: 20rem;
             border-radius: 50%;
             position: relative;
+            top: 24px;
 
             @include media.mobiles {
                 width: 25rem;
@@ -166,7 +167,7 @@
         .icon-2 {
             top: 5%;
             right: 15%;
-            animation: moveIcon 2s ease 2.9s  infinite alternate;
+            animation: moveIcon 2s ease 2.9s infinite alternate;
         }
 
         .icon-3 {
