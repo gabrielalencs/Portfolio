@@ -1,10 +1,10 @@
 // Images
 
-import ProjectKenai from "../../src/assets/projects/projects__kenai.png";
+import ProjectKenai from "../../src/assets/projects/projects_kenai.png";
 import ProjectQuickNotes from "../../src/assets/projects/projects_quick-notes.png";
-import ProjectFrontendMentor from "../../src/assets/projects/projects__frontend-mentor.png";
-import ProjectCodelab from "../../src/assets/projects/projects__codelab.png";
-import ProjectMenuOnline from "../../src/assets/projects/projects__menu-online.png";
+import ProjectFrontendMentor from "../../src/assets/projects/projects_frontend-mentor.png";
+import ProjectCodelab from "../../src/assets/projects/projects_codelab.png";
+import ProjectMenuOnline from "../../src/assets/projects/projects_menu-online.png";
 
 import { FaReact } from "react-icons/fa";
 import { SiVite } from "react-icons/si";
